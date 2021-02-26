@@ -27,13 +27,17 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/prismic",
   ],
   googleFonts: {
     families: {
       Alegreya: [400, 700],
     },
   },
-
+  prismic: {
+    endpoint: "https://tolkienletters.cdn.prismic.io/api/v2",
+    preview: false,
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
