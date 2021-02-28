@@ -1,7 +1,15 @@
 <template>
   <div class="container">
     <h1 class="text-5xl">Tolkien Letters</h1>
-    <pre>{{ letters }}</pre>
+    <div class="hidden flex flex-col">
+      <NuxtLink
+        v-for="letter in letters"
+        :key="letter.slug"
+        :to="{ name: 'slug', params: { slug: letter.slug } }"
+        >Letter {{ letter.slug }}</NuxtLink
+      >
+    </div>
+    <!-- <pre>{{ letters }}</pre> -->
   </div>
 </template>
 

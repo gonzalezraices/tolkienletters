@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-2xl">
+  <div class="container">
     <h1 class="text-4xl">{{ letter.number }} - {{ letter.title }}</h1>
     <p v-if="letter.context">{{ letter.context }}</p>
     <address class="not-italic">
@@ -26,14 +26,16 @@
     >
     </iframe> -->
 
-    <nuxt-content :document="letter" class="text-xl" />
+    <section class="max-w-3xl mx-auto">
+      <nuxt-content :document="letter" class="text-xl" />
+    </section>
     <pre class="mt-32">{{ letter }}</pre>
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, params, redirect, error }) {
+  async asyncData({ $content, params, error }) {
     try {
       const letter = await $content("letters", params.slug).fetch();
       return { letter };
