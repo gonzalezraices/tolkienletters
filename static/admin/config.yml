@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: brunodeangelis/tolkienletters-web
   branch: content
+  squash_merges: true
+
+publish_mode: editorial_workflow
+# local_backend: true
 
 media_folder: static/img
 public_folder: /img
