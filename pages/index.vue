@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-5xl">Tolkien Letters</h1>
-    <pre>{{ letters }}</pre>
+    <!-- <pre>{{ letters }}</pre> -->
   </div>
 </template>
 
