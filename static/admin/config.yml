@@ -1,21 +1,36 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: content
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "letters"
+    label: "Letters"
+    label_singular: "Letter"
+    identifier_field: "number"
+    folder: "content/letters"
     format: "frontmatter"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { name: "title", label: "Title", widget: "string", hint: "For example: To Edith Bratt" }
+      - { name: "number", label: "Number", widget: "number", min: 1, max: 700 }
+      - name: "date_fields"
+        label: "Date"
+        widget: "object"
+        fields:
+          - {
+              name: "date",
+              label: "Date",
+              widget: "datetime",
+              date_format: true,
+              picker_utc: false,
+            }
+          - { name: "unknown_day", label: "Unknown day", widget: "boolean", required: false }
+          - { name: "unknown_month", label: "Unknown month", widget: "boolean", required: false }
+      - { name: "address", label: "Address", widget: "string" }
+      - { name: "recipient", label: "Recipient", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
