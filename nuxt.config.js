@@ -41,10 +41,13 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
+    "@nuxt/content",
     "@nuxtjs/pwa",
     "@nuxtjs/gtm",
   ],
-
+  content: {
+    liveEdit: false,
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
