@@ -7,6 +7,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      script: [{ src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }],
+    };
+  },
   async asyncData({ $prismic }) {
     const letters = await $prismic.api.query($prismic.predicates.at("document.type", "letter"));
 
