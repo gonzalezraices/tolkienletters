@@ -47,6 +47,7 @@ export default {
   ],
   content: {
     liveEdit: false,
+    fullTextSearchFields: ["title", "slug", "address", "recipient", "context", "text"],
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

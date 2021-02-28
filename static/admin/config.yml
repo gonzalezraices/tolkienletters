@@ -15,6 +15,7 @@ collections:
     create: true
     editor:
       preview: false
+    summary: "Letter {{slug}} - To {{fields.recipient}}"
     fields:
       - { name: "title", label: "Title", widget: "string", hint: "For example: To Edith Bratt" }
       - { name: "number", label: "Number", widget: "number", min: 1, max: 700 }
@@ -27,10 +28,30 @@ collections:
               label: "Date",
               widget: "datetime",
               date_format: true,
+              time_format: false,
               picker_utc: false,
             }
-          - { name: "unknown_day", label: "Unknown day", widget: "boolean", required: false }
-          - { name: "unknown_month", label: "Unknown month", widget: "boolean", required: false }
+          - {
+              name: "unknown_day",
+              label: "Unknown day",
+              widget: "boolean",
+              required: false,
+              hint: "On some letters, the day is unknown",
+            }
+          - {
+              name: "unknown_month",
+              label: "Unknown month",
+              widget: "boolean",
+              required: false,
+              hint: "On some letters, the month is unknown",
+            }
       - { name: "address", label: "Address", widget: "string" }
       - { name: "recipient", label: "Recipient", widget: "string" }
+      - {
+          name: "context",
+          label: "Context",
+          widget: "text",
+          hint: "On some letters, there is some text that gives context to what the letter is about",
+        }
       - { name: "body", label: "Body", widget: "markdown" }
+    sortable_fields: ["date_fields.date", "number", "recipient"]
