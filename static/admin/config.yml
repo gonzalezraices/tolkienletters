@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: brunodeangelis/tolkienletters-web
+  repo: brunodeangelis/tolkienletters
   branch: content
   squash_merges: true
 
