@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: brunodeangelis/tolkienletters
-  branch: content
+  branch: master
   squash_merges: true
   open_authoring: true
 
